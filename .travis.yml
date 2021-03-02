@@ -11,7 +11,7 @@ before_install:
 
 install:
     # Composer
-    - travis_retry composer install --no-progress --prefer-dist
+    - travis_retry composer update --no-progress --prefer-dist --dev
 
 script:
     # Tests
@@ -30,13 +30,6 @@ jobs:
           script:
               - composer run-script tests
 
-        - env: title="PHP 8.0"
-          php: 8.0
-          install:
-              - travis_retry composer update --no-progress --prefer-dist --dev
-          script:
-              - composer run-script tests
-
         - env: title="CodeStyle"
           stage: CodeStyle
           php: 7.4
@@ -49,7 +42,7 @@ jobs:
           stage: Phpstan
           php: 7.4
           install:
-              - travis_retry composer update --no-progress --prefer-dist --prefer-lowest --dev
+              - travis_retry composer update --no-progress --prefer-dist --dev
           script:
               - composer run-script analyse
 
