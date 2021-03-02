@@ -46,38 +46,6 @@ composer analyse
 composer tests
 ```
 
-## Example usage
-```php
-// use factory to create CEB instance
-// factory creates and registers file readers and generators so you don't have to do it manually
-$options = new Options('path/to/bccert.pem', 'certPassPhrase', 'contractId', 'appGuid');
-$factory = new CEBFactory($options, '/tmp/dir/path');
-$ceb = $factory->create();
-
-// returns API response with files listed in CEB API
-$list = $ceb->listFiles();
-Assert::count(2, $list->getFiles());
-
-// You can read and parse files content
-
-// first one is VYPIS type
-$as = $ceb->downloadAndRead($list->getFiles()[0]);
-Assert::true($as instanceof IReport);
-// You can iterate entries and get details about each transaction
-Assert::count(11, $as->getEntries());
-
-// second one is AVIZO type
-$adv = $ceb->downloadAndRead($list->getFiles()[1]);
-Assert::true($adv instanceof IAdvice);
-// You can iterate entries and get details about each transaction
-Assert::count(3, $adv->getTransactions());
-
-// generate and upload payment batch file to CEB
-$payments = []; // create list of IPaymentOrder entities eg by: new InlandPayment(...)
-$file = $ceb->generatePaymentFile($payments);
-$ceb->upload([$file]);
-```
-
 ## Authors
 
 | [Tomáš Holan](https://github.com/holantomas)                             |
