@@ -1,3 +1,5 @@
+os: linux
+dist: xenial
 language: php
 php:
     - 7.4
@@ -50,8 +52,6 @@ jobs:
               - travis_retry composer update --no-progress --prefer-dist --prefer-lowest --dev
           script:
               - composer run-script analyse
-
-sudo: false
 
 cache:
     directories:
