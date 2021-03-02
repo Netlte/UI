@@ -1,11 +1,11 @@
 # Netlte > UI
 
-[![Build Status](https://img.shields.io/travis/com/Netlte/UI.svg?style=flat-square)](https://travis-ci.com/Netlte/UI)
-[![Licence](https://img.shields.io/packagist/l/Netlte/UI.svg?style=flat-square)](https://packagist.org/packages/Netlte/UI)
-[![Downloads this Month](https://img.shields.io/packagist/dm/Netlte/UI.svg?style=flat-square)](https://packagist.org/packages/Netlte/UI)
-[![Downloads total](https://img.shields.io/packagist/dt/Netlte/UI.svg?style=flat-square)](https://packagist.org/packages/Netlte/UI)
-[![Latest stable](https://img.shields.io/packagist/v/Netlte/UI.svg?style=flat-square)](https://packagist.org/packages/Netlte/UI)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+[![Build Status](https://badgen.net/travis/netlte/ui)](https://travis-ci.com/Netlte/UI)
+[![Licence](https://badgen.net/packagist/license/netlte/ui)](https://packagist.org/packages/Netlte/UI)
+[![Latest stable](https://badgen.net/packagist/v/netlte/ui)](https://packagist.org/packages/Netlte/UI)
+[![Downloads this Month](https://badgen.net/packagist/dm/netlte/ui)](https://packagist.org/packages/Netlte/UI)
+[![Downloads total](https://badgen.net/packagist/dt/netlte/ui)](https://packagist.org/packages/Netlte/UI)
+[![PHPStan](https://badgen.net/badge/PHPStan/enabled/green)](https://github.com/phpstan/phpstan)
 
 ## Credits
 
