@@ -25,8 +25,8 @@ composer require netlte/ui
 
 | State       | Version | Branch   | PHP      |
 |-------------|---------|----------|----------|
-| stable      | `^1.0`  | `master` | `>= 7.4` |
-| NoN         | `^2.0`  | `master` | `>= 8.0` |
+| stable      | `^1.0`  |  `main`  | `>= 7.4` |
+| NoN         | `^2.0`  |  `main`  | `>= 8.0` |
 
 
 ## Tests
