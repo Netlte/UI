@@ -33,14 +33,12 @@ composer require netlte/ui
 
 Check code quality and run tests
 ```
-composer update --dev
 composer build
 ```
 
 or separately
 
 ```
-composer update --dev
 composer cs
 composer analyse
 composer tests
