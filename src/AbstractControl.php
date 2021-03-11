@@ -9,6 +9,8 @@ use Nette\Localization\Translator;
  * @author       Tomáš Holan <tomas@holan.dev>
  * @package      netlte/navigation
  * @copyright    Copyright © 2021, Tomáš Holan [www.holan.dev]
+ *
+ * @method getTemplate() \Nette\Bridges\ApplicationLatte\Template|\Nette\Application\UI\Template
  */
 abstract class AbstractControl extends Control {
 
