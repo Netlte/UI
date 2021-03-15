@@ -2,7 +2,7 @@
 
 namespace Netlte\UI\Tests\Cases\Unit;
 
-use Netlte\UI\BaseContainer;
+use Netlte\UI\Container;
 use Nette\Application\UI\Control;
 use Tester\Assert;
 use Tester\TestCase;
@@ -13,10 +13,10 @@ class BaseContainerTest extends TestCase {
 
 	public const CONTROL_NAME = 'testing';
 
-	public BaseContainer $container;
+	public Container $container;
 
 	public function prepareTests(): void {
-		$this->container = new BaseContainer();
+		$this->container = new Container();
 		$control = new class extends Control {
 			public function render(): void {
 				echo 'test';

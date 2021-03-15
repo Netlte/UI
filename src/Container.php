@@ -2,14 +2,14 @@
 
 namespace Netlte\UI;
 
-use Nette\ComponentModel\Container;
+use Nette\ComponentModel\Container as NetteContainer;
 
 /**
  * @author       Tomáš Holan <tomas@holan.dev>
  * @package      netlte/navigation
  * @copyright    Copyright © 2021, Tomáš Holan [www.holan.dev]
  */
-class BaseContainer  extends Container {
+class Container  extends NetteContainer implements IContainer {
 
 	/** @var string[] */
 	private array $hidden = [];
