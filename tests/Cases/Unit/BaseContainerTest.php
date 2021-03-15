@@ -15,7 +15,7 @@ class BaseContainerTest extends TestCase {
 
 	public Container $container;
 
-	public function prepareTests(): void {
+	public function setUp(): void {
 		$this->container = new Container();
 		$control = new class extends Control {
 			public function render(): void {
@@ -27,7 +27,6 @@ class BaseContainerTest extends TestCase {
 
 
 	public function testRenderableControl(): void {
-		$this->prepareTests();
 
 		\ob_start();
 		$this->container->render();
@@ -54,7 +53,6 @@ class BaseContainerTest extends TestCase {
 	}
 
 	public function testNonRenderableControl(): void {
-		$this->prepareTests();
 		$this->container->removeComponent($this->container->getComponent(self::CONTROL_NAME));
 		$control = new class extends Control {
 		};

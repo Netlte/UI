@@ -15,12 +15,11 @@ class AbstractControlTest extends TestCase {
 
 	public AbstractControl $control;
 
-	public function prepareTests(): void {
+	public function setUp(): void {
 		$this->control = new class extends AbstractControl {};
 	}
 
 	public function testSettersAndGetters(): void {
-		$this->prepareTests();
 
 		$result = $this->control->setTranslator(new class implements Translator {
 			/**
