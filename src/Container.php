@@ -6,7 +6,7 @@ use Nette\ComponentModel\Container as NetteContainer;
 
 /**
  * @author       Tomáš Holan <tomas@holan.dev>
- * @package      netlte/navigation
+ * @package      netlte/ui
  * @copyright    Copyright © 2021, Tomáš Holan [www.holan.dev]
  */
 class Container  extends NetteContainer implements IContainer {
