@@ -13,7 +13,7 @@ Feel free to use. Your contributions are very welcome. Feel free to publish pull
 
 ## Overview
 
-UI helpers and abstract classes used across of organization
+UI helpers and abstract classes used across of organization. See more in [documentation](.docs).
 
 ## Install
 
