@@ -12,7 +12,9 @@ use Nette\Localization\Translator;
  *
  * @method getTemplate() \Nette\Bridges\ApplicationLatte\Template|\Nette\Application\UI\Template
  */
-abstract class AbstractControl extends Control {
+abstract class AbstractControl extends Control implements IContainer {
+
+	use TContainer;
 
 	private ?Translator $translator = null;
 	private ?string $templateFile = null;

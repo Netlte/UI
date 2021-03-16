@@ -9,28 +9,8 @@ use Nette\ComponentModel\Container as NetteContainer;
  * @package      netlte/ui
  * @copyright    Copyright © 2021, Tomáš Holan [www.holan.dev]
  */
-class Container  extends NetteContainer implements IContainer {
+class Container extends NetteContainer implements IContainer {
 
-	/** @var string[] */
-	private array $hidden = [];
-
-	public function hideComponent(string $name): self {
-		if (!\in_array($name, $this->hidden, true)) $this->hidden[] = $name;
-		return $this;
-	}
-
-	public function showComponent(string $name): self {
-		$key = \array_search($name, $this->hidden, true);
-		if ($key !== false) unset($this->hidden[$key]);
-		return $this;
-	}
-
-	public function render(): void {
-		foreach ($this->getComponents() as $component) {
-			if (\in_array($component->getName(), $this->hidden, true)) continue;
-			if (!\method_exists($component,'render')) continue;
-			$component->render();
-		}
-	}
+	use TContainer;
 
 }

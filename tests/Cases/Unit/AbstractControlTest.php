@@ -16,11 +16,51 @@ class AbstractControlTest extends TestCase {
 	public AbstractControl $control;
 
 	public function setUp(): void {
-		$this->control = new class extends AbstractControl {};
+		$this->control = new class extends AbstractControl {
+
+			public function render(): void {
+				foreach ($this->getComponents() as $component) {
+					if (\in_array($component->getName(), $this->hidden, true)) continue;
+					if (!\method_exists($component,'render')) continue;
+					$component->render();
+				}
+			}
+
+		};
 	}
 
-	public function testSettersAndGetters(): void {
+	public function testRender(): void {
+		Assert::equal('', $this->render());
 
+		$child = new class extends AbstractControl {
+			public function render(): void {
+				echo 'Testing';
+			}
+		};
+
+		// Added child component
+		$this->control->addComponent($child, 'child');
+		Assert::equal('Testing', $this->render());
+
+		// Hide child component
+		$this->control->hideComponent('child');
+		Assert::true($this->control->isComponentHidden('child'));
+		Assert::false($this->control->isComponentHidden('undefined_component'));
+		Assert::equal('', $this->render());
+
+		// Show child component
+		$this->control->showComponent('child');
+		Assert::equal('Testing', $this->render());
+
+	}
+
+	public function testTemplateFile(): void {
+		$result = $this->control->setTemplateFile(__FILE__);
+		Assert::type(AbstractControl::class, $result);
+		Assert::equal(__FILE__, $result->getTemplateFile());
+	}
+
+	public function testTranslator(): void {
 		$result = $this->control->setTranslator(new class implements Translator {
 			/**
 			 * @param  mixed  $message
@@ -33,10 +73,13 @@ class AbstractControlTest extends TestCase {
 
 		Assert::type(AbstractControl::class, $result);
 		Assert::type(Translator::class, $result->getTranslator());
+	}
 
-		$result = $this->control->setTemplateFile(__FILE__);
-		Assert::type(AbstractControl::class, $result);
-		Assert::equal(__FILE__, $result->getTemplateFile());
+	protected function render(): string {
+		\ob_start();
+		$this->control->render();
+		$result = \ob_get_clean();
+		return $result !== false ? $result : '';
 	}
 }
 

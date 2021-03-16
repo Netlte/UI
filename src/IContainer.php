@@ -16,6 +16,6 @@ interface IContainer extends INetteContainer {
 
 	public function showComponent(string $name): IContainer;
 
-	public function render(): void;
+	public function isComponentHidden(string $name): bool;
 
 }

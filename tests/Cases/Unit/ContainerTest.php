@@ -2,21 +2,21 @@
 
 namespace Netlte\UI\Tests\Cases\Unit;
 
-use Netlte\UI\Container;
+use Netlte\UI\RenderableContainer;
 use Nette\Application\UI\Control;
 use Tester\Assert;
 use Tester\TestCase;
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-class BaseContainerTest extends TestCase {
+class ContainerTest extends TestCase {
 
 	public const CONTROL_NAME = 'testing';
 
-	public Container $container;
+	public RenderableContainer $container;
 
 	public function setUp(): void {
-		$this->container = new Container();
+		$this->container = new RenderableContainer();
 		$control = new class extends Control {
 			public function render(): void {
 				echo 'test';
@@ -67,4 +67,4 @@ class BaseContainerTest extends TestCase {
 
 }
 
-(new BaseContainerTest())->run();
+(new ContainerTest())->run();
