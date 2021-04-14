@@ -8,7 +8,7 @@
 	"authors": [
 		{
 			"name": "Tomáš Holan",
-			"homepage": "https://tomasholan.eu"
+		  	"homepage": "https://www.holan.dev"
 		}
 	],
 	"require": {
