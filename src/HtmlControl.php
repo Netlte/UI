@@ -14,7 +14,7 @@ class HtmlControl extends AbstractControl {
 	public const RENDER_CHILDREN_FIRST = true;
 	public const RENDER_CHILDREN_LAST = false;
 
-	public int $indent = 0;
+	public int $indent = 1;
 	public bool $childrenFirst = self::RENDER_CHILDREN_FIRST;
 	protected Html $html;
 
